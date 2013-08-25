@@ -10,6 +10,7 @@ gem 'httparty'
 
 group :development do
   gem 'debugger'
+  gem 'capistrano'
 end
 
 group :development, :test do
