@@ -1,14 +1,38 @@
-<ul class="nav nav-tabs">
-  <li>
-    <%= link_to :root do %>
-      <span class="glyphicon glyphicon-star"></span>
-      home
+<nav class="navbar navbar-default" role="navigation">
+
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".collapsed-nav-links">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <%= link_to :root, :class => "navbar-brand" do %>
+       Feedlists
     <% end %>
-  </li>
-  <li>
-    <%= link_to users_path do %>
-      <span class="glyphicon glyphicon-user"></span>
-      users
-    <% end %>
-  </li>
-</ul>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse collapsed-nav-links">
+    
+    <ul class="nav navbar-nav">
+      <li class="<%= active? "users", "index" %>">
+        <%= link_to users_path do %>
+          <span class="glyphicon glyphicon-tree-deciduous"></span>
+          users
+        <% end %>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li class="<%= active? "users", "new" %>">
+        <%= link_to new_user_path do %>
+          <span class="glyphicon glyphicon-heart"></span>
+          join
+        <% end %>
+      </li>
+    </ul>
+
+  </div>
+
+</nav>

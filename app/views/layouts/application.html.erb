@@ -7,13 +7,14 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body data-controller="<%= params[:controller] %>" data-action="<%= params[:action] %>">
+<body>
+
   <%= render 'layouts/nav' %>
+
   <div class="container">
     <h1>Feedlists</h1>
     <%= yield %>
   </div>
-
 
 </body>
 </html>
