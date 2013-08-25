@@ -7,6 +7,9 @@ gem 'rails', '3.2.13'
 
 gem 'sqlite3'
 gem 'thin'
+gem 'figaro'
+gem 'gibberish'
+gem 'httparty'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'

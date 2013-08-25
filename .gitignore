@@ -15,5 +15,7 @@
 /tmp
 
 #DS_STORE
-
 .DS_STORE
+
+# Ignore application configuration
+/config/application.yml
