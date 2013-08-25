@@ -1,7 +1,9 @@
 <h2><%= @user.email %></h2>
 
+<h3><%= @count %> subscriptions</h3>
+
 <ul>
-  <% @user.subscriptions.each do |subscription| %>
+  <% @subscriptions.each do |subscription| %>
     <li>
       <%= link_to subscription["title"], subscription["site_url"] %>
     </li>

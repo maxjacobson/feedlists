@@ -6,6 +6,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @subscriptions = @user.subscriptions
+    @count = @subscriptions.count
   end
 
   def new
