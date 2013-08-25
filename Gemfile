@@ -11,6 +11,8 @@ gem 'httparty'
 group :development do
   gem 'debugger'
   gem 'capistrano'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :development, :test do
