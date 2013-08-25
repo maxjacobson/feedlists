@@ -8,6 +8,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <ul class="nav navbar">
+    <li>
+      <%= link_to :root do %>
+        <span class="glyphicon glyphicon-star"></span>
+        home
+      <% end %>
+    </li>
+    <li>
+      <%= link_to users_path do %>
+        <span class="glyphicon glyphicon-user"></span>
+        users
+      <% end %>
+    </li>
+  </ul>
   <div class="container">
     <h1>Feedlists</h1>
     <%= yield %>
