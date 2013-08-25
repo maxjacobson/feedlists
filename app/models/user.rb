@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :password
+  validates_uniqueness_of :email
+  validates_presence_of :email, :password
   CIPHER = Gibberish::AES.new(ENV["GIBBERISH"])
 
   def subscriptions
