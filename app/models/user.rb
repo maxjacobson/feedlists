@@ -25,15 +25,15 @@ class User < ActiveRecord::Base
   
   private
 
-  def auth
-    {
-      :username => email,
-      :password => password
-    }
-  end
+    def password
+      CIPHER.dec(self.encrypted_password)
+    end
 
-  def password
-    CIPHER.dec(self.encrypted_password)
-  end
+    def auth
+      {
+        :username => email,
+        :password => password
+      }
+    end
 
 end
