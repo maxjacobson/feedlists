@@ -30,7 +30,7 @@ namespace :deploy do
    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
  end
  task :symlink_config, :roles => :app do 
-   run "link -nfs #{shared_path}/production.sqlite3 #{current_release}/db/production.sqlite3"
-   run "link -nfs #{shared_path}/application.yml #{current_release}/config/application.yml"
+   run "ln -nfs #{shared_path}/production.sqlite3 #{current_release}/db/production.sqlite3"
+   run "ln -nfs #{shared_path}/application.yml #{current_release}/config/application.yml"
  end
 end
