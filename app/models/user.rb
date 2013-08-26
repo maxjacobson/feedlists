@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :password
   validates_uniqueness_of :email
-  validates_presence_of :email, :password
+  validates_presence_of :email, :encrypted_password
   CIPHER = Gibberish::AES.new(ENV["GIBBERISH"])
 
   def subscriptions
@@ -17,7 +17,10 @@ class User < ActiveRecord::Base
   end
 
   def password=(password)
-    self.encrypted_password = CIPHER.enc(password)
+    if password.present?
+      # because gibberish throws an error when password isn't present
+      self.encrypted_password = CIPHER.enc(password)
+    end
   end
   
   private
